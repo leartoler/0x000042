@@ -21,7 +21,7 @@ jobs:
     - name: Deploy to neocities
       uses: bcomnes/deploy-to-neocities@v2.0.2
       with:
-        api_token: cc620c2b114babfc1c08dbfe5d7fb25a
+        api_token: d23b4f19e3df4c19d97735f536035d74
         cleanup: false
         dist_dir: public
 
