@@ -19,10 +19,8 @@ body {
     padding: 30px;
 }
 
-.folio {}
-
 .stat {
-    font-size: 44px;
+    font-size: 30px;
     font-family: 'ultra', serif;
     letter-spacing: -2px;
     padding: 15px 0;
@@ -44,8 +42,6 @@ body {
     padding: 0 0 20px 0;
 }
 
-.section-1 {}
-
 .section-1-headline {
     font-size: 58px;
     margin: 0 auto;
@@ -62,7 +58,6 @@ body {
 }
 
 .section-2 {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     border-bottom: 1px solid #000;
 }
@@ -340,8 +335,10 @@ body {
     .section-3-headline,
     .section-4-headline,
     .section-5-headline {
-        font-size: 20px;
+        font-size: 34px;
         padding: 10px 0 20 0;
+        text-align: center;
+        align-content: center;
     }
     .grid {
         grid-template-columns: repeat(7, 14.2857%);
@@ -423,4 +420,13 @@ body {
         left: 2px;
         top: 0;
     }
+}
+
+a:hover {
+    color: #000062;
+}
+
+a {
+    text-decoration: none;
+    color: black
 }
