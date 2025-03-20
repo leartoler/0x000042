@@ -13,6 +13,11 @@ body {
     font-size: 14px;
 }
 
+.absolute
+{
+position: relative;
+}
+
 .s4-box {
     font-size: 9px;
 }
