@@ -1,6 +1,76 @@
-# This file tells search engines and bots what they are allowed to see on your site.
+#    .__________________________.
+#    | .___________________. |==|
+#    | | ................. | |  |
+#    | | ::[ Dear robot ]: | |  |
+#    | | ::::[ be nice ]:: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | |  |
+#    | | ::::::::::::::::: | | ,|
+#    | !___________________! |(c|
+#    !_______________________!__!
+#   /                            \
+#  /  [][][][][][][][][][][][][]  \
+# /  [][][][][][][][][][][][][][]  \
+#(  [][][][][____________][][][][]  )
+# \ ------------------------------ /
+#  \______________________________/
 
-# This is the default rule, which allows search engines to crawl your site (recommended).
+
+#       _-_
+#    /~~   ~~\
+# /~~         ~~\
+#{               }
+# \  _-     -_  /
+#   ~  \\ //  ~
+#_- -   | | _- _
+#  _ -  | |   -_
+#      // \\
+# Feel
+
+User-agent: Twitterbot 
+
+Allow: /lp
+Allow: /de-de/lp
+Allow: /en-gb/lp
+Allow: /ja-jp/lp
+Allow: /fr-fr/lp
+Allow: /en-gb/lp
+Allow: /en-ca/lp
+Allow: /en-au/lp
+Allow: /en-in/lp
+Allow: /es-es/lp
+Allow: /es-la/lp
+Allow: /it-it/lp
+Allow: /ko-kr/lp
+Allow: /pt-br/lp
+Allow: /zh-cn/lp
+Allow: /zh-tw/lp
+Allow: /ru-ru/lp
+Allow: /pl-pl/lp
+
+User-Agent: DemandbaseWebsitePreview/0.1 
+
+Allow: /lp
+Allow: /de-de/lp
+Allow: /en-gb/lp
+Allow: /ja-jp/lp
+Allow: /fr-fr/lp
+Allow: /en-gb/lp
+Allow: /en-ca/lp
+Allow: /en-au/lp
+Allow: /en-in/lp
+Allow: /es-es/lp
+Allow: /es-la/lp
+Allow: /it-it/lp
+Allow: /ko-kr/lp
+Allow: /pt-br/lp
+Allow: /zh-cn/lp
+Allow: /zh-tw/lp
+Allow: /ru-ru/lp
+Allow: /pl-pl/lp
+
+
 User-agent: *
 Allow: /
 
@@ -46,3 +116,18 @@ Allow: /
 #User-agent: Webzio-Extended
 #User-agent: YouBot
 #Disallow: /
+
+
+#              ________
+#   __,_,     |        |
+#  [_|_/      |   OK   |
+#   //        |________|
+# _//    __  /
+#(_|)   |@@|
+# \ \__ \--/ __
+#  \o__|----|  |   __
+#      \ }{ /\ )_ / _\
+#      /\__/\ \__O (__
+#     (--/\--)    \__/
+#     _)(  )(_
+# 

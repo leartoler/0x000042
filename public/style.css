@@ -1,3 +1,13 @@
+@font-face {
+    font-family:PPGoshaSans-Bold;
+    src: url(../Fonts/PPGoshaSans-Bold.otf);
+}
+
+@font-face {
+       font-family:PPGoshaSans-Regular;
+    src: url(../Fonts/PPGoshaSans-Regular.otf);
+}
+
 body {
     font-family: 'Source Serif Pro', serif;
     font-size: 14px;
@@ -8,7 +18,7 @@ body {
 }
 
 .alfa {
-    font-family: 'Alfa Slab One', serif;
+    font-family: 'PPGoshaSans-Bold';
 }
 
 .merriweather {
@@ -21,8 +31,7 @@ body {
 
 .stat {
     font-size: 20px;
-    font-family: 'ultra', serif;
-    letter-spacing: -2px;
+    font-family: 'PPGoshaSans-Regular';
     padding: 15px 0;
 }
 
