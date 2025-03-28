@@ -31,11 +31,7 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
-  .btn {
-    margin: 0.3rem;
-  }
-}
+
 
 .btn {
     font-family: Lato;
@@ -53,6 +49,12 @@ body {
     -webkit-appearance: none;
     color: #555;
     background-color: rgba(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    margin: 0.3rem;
+  }
 }
 
 .btn:hover {
