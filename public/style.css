@@ -13,6 +13,14 @@ body {
     font-size: 14px;
 }
 
+.card div
+{
+background-color: #ff1d8a8a;
+}
+
+
+
+
 .absolute
 {
 position: relative;
@@ -260,6 +268,7 @@ position: relative;
 }
 
 @media (min-width: 800px) {
+
     .container {
         padding: 50px;
     }
@@ -297,6 +306,7 @@ position: relative;
         grid-column: span 3;
         padding-right: 15px;
     }
+
     .section-3 {
         grid-column: span 1;
         display: block;
@@ -341,6 +351,8 @@ position: relative;
 }
 
 @media (min-width: 1100px) {
+ 
+
     .container {
         max-width: 1040px;
         margin: auto;
@@ -442,7 +454,7 @@ a:hover {
 
 a {
     text-decoration: none;
-    color: black
+    color: black    
 }
 
 .btn {
@@ -477,3 +489,4 @@ a {
   border: 0;
   padding: 0;
 }
+
