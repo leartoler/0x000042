@@ -15,6 +15,7 @@ body{
   font-family: Merriweather, Georgia, serif;
   font-size: 14px;
 }
+
 #portfolio {  
     margin: 1rem 0;
     -webkit-column-count: 3; 
@@ -314,7 +315,7 @@ article p:not(:first-of-type) {
 }
 
 h4 {
-  color: #ddd;
+  color: #7c7c7c;
   font-size: 1.5em;
   letter-spacing: 0.51px;
   text-align: center;
@@ -326,7 +327,7 @@ h2 {
   font-size: 7.4rem;
   font-weight: 600;
   text-align: center;
-  font-size: 4.2rem;
+  font-size: 2.2rem;
   margin-block-start: -0.2em;
 }
 
