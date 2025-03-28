@@ -246,6 +246,8 @@ p:hover {
   font-weight: 500;
   line-height: 2.625rem;
   padding-bottom: 45%;
+padding-left: 5%;
+padding-right: 5%;
 }
 .at-user__title {
   color: #6F808A;
