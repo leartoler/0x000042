@@ -57,6 +57,14 @@ p{
 line-height: 1.4rem;
 }
 
+.lg-sub-html p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: white;
+}
+
+
+
 p:hover { 
   cursor:pointer; 
   background: #333; 
