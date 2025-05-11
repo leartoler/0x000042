@@ -1,0 +1,11 @@
+#dialogBox {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
