@@ -339,12 +339,21 @@ h4 {
   font-style: italic;
 }
 
-h2 {
+h1 {
   font-size: 7.4rem;
   font-weight: 600;
   text-align: center;
   font-size: 2.2rem;
   margin-block-start: -0.2em;
+}
+
+h2 {
+  color: #7c7c7c;
+  font-size: 1.5em;
+  letter-spacing: 0.51px;
+  text-align: center;
+  margin: -1.7em auto 3em;
+  font-style: italic;
 }
 
 hr {
