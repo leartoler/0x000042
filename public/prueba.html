@@ -2,30 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Mi modelo AR</title>
+    <title>AR con imagen personalizada</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar-nft.js"></script>
     <style> body { margin: 0; overflow: hidden; } </style>
   </head>
   <body>
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-assets>
-        <a-asset-item id="modelo" src="https://0x000042.com/models/3d.glb"></a-asset-item>
-      </a-assets>
-
-      <a-marker preset="hiro">
-        <a-gltf-model 
-          src="#modelo" 
-          scale="0.5 0.5 0.5" 
-          rotation="0 0 0" 
-          position="0 0 0">
-        </a-gltf-model>
-      </a-marker>
-
+    <a-scene
+      vr-mode-ui="enabled: false;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-nft
+        type="nft"
+        url="mind/imagen"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+      >
+        <a-gltf-model src="3d.glb" scale="0.5 0.5 0.5" position="0 0 0"></a-gltf-model>
+      </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
+
 
 
 

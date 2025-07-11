@@ -1,0 +1,1 @@
+Pon aquí los archivos .fset, .fset3, .fset.json generados para tu imagen.
