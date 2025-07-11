@@ -1,1 +1,2 @@
 lightGallery(document.getElementById('lightgallery'))
+
