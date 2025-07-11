@@ -1,31 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Mi modelo AR</title>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.js"></script>
-    <style> body { margin: 0; overflow: hidden; } </style>
-  </head>
-  <body>
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-assets>
-        <a-asset-item id="modelo" src="https://0x000042.com/models/3d.glb"></a-asset-item>
-      </a-assets>
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
+   <a-assets>
+  <a-asset-item id="tree" src="https://0x000042.com/models/3d.glb"></a-asset-item>
+</a-assets>
+<!-- use your gltf model -->
+<a-entity gltf-model="##tree"></a-entity>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera type='pattern' url='https://0x000042.com/models/pattern-T6_08176_636_0000722_1.patt'></a-marker-camera>
 
-      <a-marker preset="hiro">
-        <a-gltf-model 
-          src="#modelo" 
-          scale="0.5 0.5 0.5" 
-          rotation="0 0 0" 
-          position="0 0 0">
-        </a-gltf-model>
-      </a-marker>
-
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html>
+  </a-scene>
+</body>
 
 
 
