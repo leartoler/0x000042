@@ -113,7 +113,7 @@ class OperatorNode extends TempNode {
 		const bNode = this.bNode;
 
 		const typeA = aNode.getNodeType( builder );
-		const typeB = typeof bNode !== 'undefined' ? bNode.getNodeType( builder ) : null;
+		const typeB = bNode ? bNode.getNodeType( builder ) : null;
 
 		if ( typeA === 'void' || typeB === 'void' ) {
 
@@ -191,8 +191,7 @@ class OperatorNode extends TempNode {
 
 		const op = this.op;
 
-		const aNode = this.aNode;
-		const bNode = this.bNode;
+		const { aNode, bNode } = this;
 
 		const type = this.getNodeType( builder );
 
@@ -202,7 +201,7 @@ class OperatorNode extends TempNode {
 		if ( type !== 'void' ) {
 
 			typeA = aNode.getNodeType( builder );
-			typeB = typeof bNode !== 'undefined' ? bNode.getNodeType( builder ) : null;
+			typeB = bNode ? bNode.getNodeType( builder ) : null;
 
 			if ( op === '<' || op === '>' || op === '<=' || op === '>=' || op === '==' || op === '!=' ) {
 
@@ -288,7 +287,7 @@ class OperatorNode extends TempNode {
 		}
 
 		const a = aNode.build( builder, typeA );
-		const b = typeof bNode !== 'undefined' ? bNode.build( builder, typeB ) : null;
+		const b = bNode ? bNode.build( builder, typeB ) : null;
 
 		const fnOpSnippet = builder.getFunctionOperator( op );
 
@@ -734,22 +733,6 @@ addMethodChaining( 'decrement', decrement );
 /**
  * @tsl
  * @function
- * @deprecated since r168. Use {@link mod} instead.
- *
- * @param {Node} a - The first input.
- * @param {Node} b - The second input.
- * @returns {OperatorNode}
- */
-export const remainder = ( a, b ) => { // @deprecated, r168
-
-	console.warn( 'THREE.TSL: "remainder()" is deprecated. Use "mod( int( ... ) )" instead.' );
-	return mod( a, b );
-
-};
-
-/**
- * @tsl
- * @function
  * @deprecated since r175. Use {@link mod} instead.
  *
  * @param {Node} a - The first input.
@@ -763,5 +746,4 @@ export const modInt = ( a, b ) => { // @deprecated, r175
 
 };
 
-addMethodChaining( 'remainder', remainder );
 addMethodChaining( 'modInt', modInt );
