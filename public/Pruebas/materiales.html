@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería con Información</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+    <style>
+        :root {
+            --cap1_c:#a6a698ff; /*Puerto Morelos*/
+    --cap1_o:#898948ff; /*Puerto MOrelos*/            
+    --cap2_c:#4d8b83ff; /*Chetumal*/
+    --cap2_o:#006e62ff; /*Chetumal*/
+    --cap3_c:#c97e56ff; /*Bacalar*/
+    --cap3_o:#ba5328ff; /*Bacalar*/
+    --cap4_c:#c28786ff; /*FCP*/
+    --cap4_o:#992940ff; /*FCP*/
+    --cap5_c:#e1bc88ff; /*Limones*/
+    --cap5_o:#c7872aff; /*Limones */
+    --cap6_c:#4d9ca6ff; /*Tulum*/
+    --cap6_o:#00838cff; /*Tulum*/
+    --cap7_c:#ac5d72ff; /*Xpujil*/
+    --cap7_o:#931a4eff; /*Xpujil */
+    --cap8_c:#816c8eff; /*Kohunlich*/
+    --cap8_o:#5f4471ff; /*Kohunlich*/
+    --cap9_c:#8aa168ff; /*Centenario*/
+    --cap9_o:#60883bff; /*Centenario*/
+    --cap10_c:#6d7ea4ff; /*Calakmul*/
+    --cap10_o:#335d8dff; /*CAlakmul*/
+    --front:#53524a;
+    --back:#a2a196;
+    --boton_1:#69498A;
+    --boton_2:#6E2200;
+    --boton_3:#29BAA7;
+    --boton_4:#29993C;
+    --boton_5:#2A83C7;
+    --boton_6:#8C3900;
+    --boton_7:#1B941F;
+    --boton_8:#6A7043;
+    --boton_9:#7F3A87;
+    --boton_10:#8C6C32;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        @font-face 
+        {
+        font-family: "AkzidenzGrotesk-Bold";
+        src: url("https://trenmaya.neocities.org/Fonts/AkzidenzGrotesk-Bold.otf")
+        format("opentype");
+        }  
+        @font-face 
+        {
+        font-family: "AkzidenzGrotesk-Regular";
+        src: url("https://trenmaya.neocities.org/Fonts/AkzidenzGrotesk-Regular.otf")
+        format("opentype");
+        } 
+        body {
+            font-family: "AkzidenzGrotesk-Bold";
+            
+            margin: 0;
+            padding: 0;
+            background-color: var(--cap3_c); /* Color de fondo general */
+        }
+        h2{
+            color: whitesmoke;
+        }
+        p{
+            color: whitesmoke;
+        }
+        #aframe-container {
+            width: 100%; /* Ancho de la ventana */
+            height: 56.25vw; /* Altura de la ventana */
+            max-height: 80vh;
+            border-radius: 10px;
+            border: 2px solid var(--boton_3); /* Opcional: borde para la ventana */
+            overflow: hidden;
+        }
+        .gallery-container {
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            background-color: var(--cap3_o); /* Color de fondo del contenedor #c8673d */
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            z-index: 1;
+        }
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: var(--cap3_c); /*Cambir este */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .close {
+            color:var(--boton_3); /*Cambiar este*/
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery-item" onclick="openModal('modal1')">
+            <img src="fig_1.png" alt="Imagen 1">  <!--Cambiar este-->
+        </div>
+        <div class="gallery-item" onclick="openModal('modal2')">
+            <img src="https://trenmaya.neocities.org/Imagenes/3d_front/Cap_01/02.jpg" alt="Imagen 2"> <!--Cambiar este-->
+        </div>
+        <div class="gallery-item" onclick="openModal('modal3')">
+            <img src="https://trenmaya.neocities.org/Imagenes/3d_front/Cap_01/03.jpg" alt="Imagen 3"> <!--Cambiar este-->
+        </div>
+        <div class="gallery-item" onclick="openModal('modal4')">
+            <img src="https://trenmaya.neocities.org/Imagenes/3d_front/Cap_01/04.jpg" alt="Imagen 3"> <!--Cambiar este-->
+        </div>
+        <div class="gallery-item" onclick="openModal('modal5')">
+            <img src="https://trenmaya.neocities.org/Imagenes/3d_front/Cap_01/05.jpg" alt="Imagen 3"> <!--Cambiar este-->
+        </div>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Figurilla</h2>
+            <div id="aframe-container">              
+                <a-scene gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/" embedded>
+                    <a-assets>
+                        <a-asset-item id="obj1" src="https://0x000042.com/Pruebas/obj1.glb"></a-asset-item>             
+                    </a-assets>
+                    <a-entity
+                        id="camera"
+                        camera
+                        look-controls
+                        position="0 0 0"
+                        orbit-controls="
+                            autoRotate: false;
+                            target: #target;
+                            enableDamping: true;
+                            dampingFactor: 0.125;
+                            rotateSpeed:0.08;
+                            minDistance:3;
+                            maxDistance:40;">
+                    </a-entity>
+                    <a-entity id="target" gltf-model="#obj1" position="0 0 0"></a-entity>               
+                    <a-entity light="color: #ffffff; type: ambient; intensity: 2" data-aframe-default-light="" aframe-injected=""></a-entity>             
+                    <a-sky color="#898948"></a-sky>    <!--Cambiar este-->                
+                </a-scene>
+            </div>
+            <p>Figurilla antropomorfa.</p>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Metate</h2>
+            <div id="aframe-container">              
+                <a-scene gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/" embedded>
+                    <a-assets>
+                        <a-asset-item id="obj2" src="https://trenmaya.neocities.org/3d/02.glb"></a-asset-item>             
+                    </a-assets>
+                    <a-entity
+                        id="camera"
+                        camera
+                        look-controls
+                        position="0 0 0"
+                        orbit-controls="
+                            autoRotate: false;
+                            target: #target2;
+                            enableDamping: true;
+                            dampingFactor: 0.125;
+                            rotateSpeed:0.08;
+                            minDistance:3;
+                            maxDistance:40;">
+                    </a-entity>
+                    <a-entity id="target2" gltf-model="#obj2" position="0 -2 -3"></a-entity>               
+                    <a-entity light="color: white; type: ambient; intensity: -.1" data-aframe-default-light="" aframe-injected=""></a-entity>             
+                    <a-sky color="#898948"></a-sky>         <!--Cambiar este-->           
+                </a-scene>
+            </div>
+            <p>Metate de Basalto</p>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Plato</h2>
+            <div id="aframe-container">              
+                <a-scene gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/" embedded>
+                    <a-assets>
+                        <a-asset-item id="obj3" src="https://trenmaya.neocities.org/3d/03.glb"></a-asset-item>             
+                    </a-assets>
+                    <a-entity
+                        id="camera"
+                        camera
+                        look-controls
+                        position="0 0 0"
+                        orbit-controls="
+                            autoRotate: false;
+                            target: #target3;
+                            enableDamping: true;
+                            dampingFactor: 0.125;
+                            rotateSpeed:0.08;
+                            minDistance:1;
+                            maxDistance:1;">
+                    </a-entity>
+                    <a-entity id="target3"  gltf-model="#obj3" position="0 2 -3"></a-entity>               
+                    <a-entity light="color: #BBB; type: ambient; intensity: .1" data-aframe-default-light="" aframe-injected=""></a-entity>             
+                    <a-sky color="#898948"></a-sky>     <!--Cambiar este-->               
+                </a-scene>
+            </div>
+            <p>Plato con motivo zoomorfo</p>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Plato polícromo</h2>
+            <div id="aframe-container">              
+                <a-scene gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/" embedded>
+                    <a-assets>
+                        <a-asset-item id="obj4" src="https://trenmaya.neocities.org/3d/04.glb"></a-asset-item>             
+                    </a-assets>
+                    <a-entity
+                        id="camera"
+                        camera
+                        look-controls
+                        position="0 0 2"
+                        orbit-controls="
+                            autoRotate: false;
+                            target: #target;
+                            enableDamping: true;
+                            dampingFactor: 0.125;
+                            rotateSpeed:0.08;
+                            minDistance:3;
+                            maxDistance:40;">
+                    </a-entity>
+                    <a-entity id="target" gltf-model="#obj4" position="0 0 0"></a-entity>               
+                    <a-entity light="color: #BBB; type: ambient; intensity: 3" data-aframe-default-light="" aframe-injected=""></a-entity>             
+                    <a-sky color="#898948"></a-sky>         <!--Cambiar este-->           
+                </a-scene>
+            </div>
+            <p>Plato polícromo</p>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Vasija</h2>
+            <div id="aframe-container">              
+                <a-scene gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/" embedded>
+                    <a-assets>
+                        <a-asset-item id="obj5" src="https://trenmaya.neocities.org/3d/05.glb"></a-asset-item>             
+                    </a-assets>
+                    <a-entity
+                        id="camera"
+                        camera
+                        look-controls
+                        position="0 0 2"
+                        orbit-controls="
+                            autoRotate: false;
+                            target: #target;
+                            enableDamping: true;
+                            dampingFactor: 0.125;
+                            rotateSpeed:0.08;
+                            minDistance:3;
+                            maxDistance:10;">
+                    </a-entity>
+                    <a-entity id="target" gltf-model="#obj5" position="0 0 0"></a-entity>               
+                    <a-entity light="color: #BBB; type: ambient; intensity: 3" data-aframe-default-light="" aframe-injected=""></a-entity>             
+                    <a-sky color="#898948"></a-sky>      <!--Cambiar este-->              
+                </a-scene>
+            </div>
+            <p>Vasija de cerámica</p>
+        </div>
+    </div>
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('show');
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+        }
+    </script>
+</body>
+</html>
