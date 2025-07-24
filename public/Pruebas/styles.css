@@ -1,40 +1,49 @@
+/* ======================================================
+   Estilos Generales y para Escritorio
+   ====================================================== */
 body {
     background-color: #EFEBE9; /* Color de fondo similar al de la imagen */
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla */
     margin: 0;
+    padding: 1rem; /* Usa unidades relativas para el padding */
+    box-sizing: border-box;
 }
 
 .main-container {
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     background-color: #FFFFFF;
     border: 4px solid #6D4C41; /* Borde marrón oscuro */
     border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-sizing: border-box;
 }
 
 .placeholder-header {
     height: 60px; /* Espacio para simular el header con logos */
     border-bottom: 2px solid #D7CCC8;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .content-wrapper {
     display: flex;
-    gap: 20px; /* Espacio entre las dos secciones */
+    gap: 1.5rem; /* Espacio entre las dos secciones */
 }
 
 .info-section {
     flex: 1; /* Hace que ambas secciones ocupen el mismo espacio */
     border: 2px solid #D7CCC8; /* Borde gris claro */
     border-radius: 15px;
-    padding: 20px;
-    min-height: 400px; /* Altura mínima para que se vea bien */
+    padding: 1.5rem;
+    min-height: 50vh;
+    display: flex;
+    justify-content: flex-start; /* Alinea el botón arriba */
+    align-items: flex-start;
 }
 
 .styled-button {
@@ -42,16 +51,56 @@ body {
     background-color: #F5F5F5;
     border: 1px solid #A1887F; /* Borde marrón claro */
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
     color: #4E342E; /* Texto marrón oscuro */
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.1rem; /* Tamaño de fuente con unidad relativa */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
 }
 
 .styled-button:hover {
     background-color: #E0E0E0;
     transform: translateY(-2px); /* Efecto sutil al pasar el mouse */
+}
+
+/* ======================================================
+   Media Query para Smartphones (Diseño Responsivo)
+   ====================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5rem; /* Menos padding en pantallas pequeñas */
+    }
+
+    .main-container {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    .placeholder-header {
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        gap: 1rem;
+    }
+
+    .info-section {
+        min-height: 25vh; /* Altura menor en móviles */
+        padding: 1rem;
+        justify-content: center; /* Centra el botón en móviles */
+        align-items: center;
+    }
+
+    .styled-button {
+        font-size: 1.2rem; /* Texto más grande para mejor legibilidad en móvil */
+        padding: 1rem;
+        width: 90%; /* El botón ocupa casi todo el ancho */
+        box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+    }
 }
