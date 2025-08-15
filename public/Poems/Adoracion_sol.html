@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poema infinito: fondo y letras cambiantes</title>
+<title>Mitología del nacimiento del sol</title>
 <style>
   html, body {
     margin: 0;
@@ -43,7 +43,7 @@
 const main = document.querySelector('main');
 const estrofas = [];
 
-// Aquí defines los versos distintos
+
 const versos = [
   "Sol",
   "génesis del sol",
@@ -125,76 +125,22 @@ const versos = [
 "última de noche de muerte",
 "última de noche",
 "última"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];
 
-// Si hay más estrofas que versos, se puede repetir de manera controlada
 for(let i=0; i<totalEstrofas; i++){
   const p = document.createElement('p');
   p.classList.add('estrofa');
-  // Seleccionamos un verso diferente: si se acaban, se cicla
   const verso = versos[i % versos.length];
   p.textContent = `${verso}`;
   main.appendChild(p);
   estrofas.push(p);
 }
 
-  // Degradado dinámico de fondo y letras
   function updateBackground(){
     const scrollTop = window.scrollY;
     const docHeight = document.body.scrollHeight - window.innerHeight;
     let progress = Math.min(scrollTop / docHeight, 1);
 
-    // Fondo: blanco -> madrugada azul -> sol naranja -> tarde naranja -> azul violeta -> noche
     let r, g, b;
     if(progress < 0.1){
       let t = progress/0.1;
