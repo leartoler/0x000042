@@ -1,194 +1,202 @@
-<!DOCTYPE html><html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mitología del nacimiento del sol</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Helvetica', serif;
-    line-height: 1.2;
-    font-size: 1.5rem;
-    height: 100%;
-    font-weight:bold;
-  }
-  body {
-    background: #ffffff;
-    transition: background 0.1s linear;
-  }
-  .sol {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background-color: #ff6600;
-    margin: 2rem auto;
-  }
-  main {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-  }
-  .estrofa {
-    padding: .5rem 0;
-    transition: color 0.1s linear;
-  }
-</style>
-</head>
-<body>
-  <div class="sol"></div>
-  <main>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PDCJB6HRDX"
+    ></script>
     <script>
-      const totalEstrofas = 80;
-const main = document.querySelector('main');
-const estrofas = [];
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-PDCJB6HRDX");
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6700638349652184"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="description" content="Un poema sobre el mito del sol" />
+    <meta name="google-adsense-account" content="ca-pub-6700638349652184" />
+    <meta name="keywords" content="poema, js, sol, mitología, popoesía, gigantexto" />
+    <meta name="author" content="Fabián Gutiérrez Gómez" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta rel="canonical" href="https://0x000042.com/poetry/adoracion_sol" />
+    <meta name="robots" content="index, follow" />
+    <title>Manos</title>
+    <meta property="og:title" content="adoracion_sol" />
+    <meta property="og:description" content="Poema acerca del mito del sol" />
+    <meta property="og:image" content="https://0x000042.com/poetry/poem3.jpg" />
+    <meta
+      property="og:url"
+      content="https://0x000042.com/poetry/adoracion_sol"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" href="apple-touch-iphone.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-ipad.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="apple-touch-iphone4.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="apple-touch-ipad-retina.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://0x000042.com/poetry/adoracion_sol",
+        "@type": "WebSite",
+        "name": "Adoración al sol",
+        "url": "https://0x000042.com/poetry/adoracion_sol"
+      }
+    </script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css"
+    />
+    <link rel="stylesheet" href="../about.css" />
+  </head>
 
-const versos = [
-  "Sol",
-  "génesis del sol",
-"figura de génesis del sol",
-"simpleza de figura del génesis del sol", 
-"vacío de simpleza de figura del génesis",
-"círculo del vacío de simpleza de figura",
-"color de círculo del vacío de simpleza",
-"lleno de color del círculo del vacío",
-"imposibilidad de lleno de color del círculo",
-"realidad de imposibilidad de lleno de color",
-"figuras de realidad de imposibilidad de lleno", 
-"espacio de figuras de realidad de imposibilidad",
-"infinito de espacio de figuras de realidad",
-"vacío de infinito de espacio de figuras", 
-"caos de vacío de infinito de espacio",
-"cuerpos de caos de vacío de infinito",
-"celestes de cuerpos de caos de vacío",
-"sustancia de celestes de cuerpos de caos",
-"unicidad de sustancia de celestes de cuerpos",
-"inmantente de unicidad de sustancia de celestes",
-"seres de inmanente de unicidad de sustancia",
-"luz de seres de inmanente de unicidad", 
-"obscuridad de luz de seres de inmanente",
-"perecer de obscuridad de luz de seres", 
-"conversión de perecer de obscuridad de luz", 
-"continuidad de conversión de perecer de obscuridad", 
-"teleología de continuidad de conversión de perecer",
-"condenado de teleología de continudad de conversión",
-"seres vivos de condenado de teleología de continudad", 
-"células de seres vivos de condenado de teleología",
-"mitósis de células de seres vivos de condenado", 
-"energía de mitósis de células de seres vivos",
-"arcano de energía de mitósis de células",
-"elementos de arcano de energía de mitósis",
-"partículas de elementos de arcano de energía",
-"química de partículas de elementos de arcano",
-"composición de química de partículas de elementos",
-"símbolos de composición de química de partículas",
-"aprehensión de símbolos de composición de química",
-"individuos de aprehensión de símbolos de composición",
-"cognición de individuos de aprehensión de símbolos", 
-"colectivo de cognición de individuos de aprehensión",
-"inconsciente de colectivo de cognición de individuos",
-"formacion de inconsciente de colectivo de cognición",
-"información de formación de inconsciente de colectivo",
-"unidades de información de formación de inconsciente", 
-"bits de unidades de información de formación",
-"tecnología de bits de unidades de información",
-"objetos de tecnología de bits de unidades", 
-"señales de objetos de tecnología de bits",
-"transmisión de señales de objetos de tecnología",
-"neuronas de transmisión de señales de objetos",
-"imagen de neuronas de transmisión de señales",
-"semejanza de imagen de neuronas de transmisión",
-"creación de semejanza de imagen de neuronnas",
-"Dios de creación de semajanza de imagen", 
-"estrellas de Dios de creación de semejanza",
-"centro de estrellas de Dios de creación",
-"esferas de centro de estrellas de Dios",
-"silencio de esfera de centro de estrellas",
-"música de silencio de esferas de centro",
-"gravedad de música de silencio de esferas", 
-"átomos de gravedad de música de silencio",
-"tiempo de átomos de gravedad de música",
-"historia de tiempo de átomos de gravedad", 
-"día de historia de tiempo de átomos",
-"relatos de día de historia de tiempo",
-"diferencia de relatos de día de historia", 
-"cultura de diferencia de relatos de día",
-"mismidad de cultura de diferencia de relatos",
-"adoración de mismidad de cultura de diferencia",
-"nacimiento de adoración de mismidad de cultura",
-"mitología de nacimiento de adoración de mismidad",
-"día de mitología de nacimiento de adoración",
-"muerte de día de mitología de adoración",
-"noche de muerte de día de mitología",
-"última de noche de muerte de día",
-"última de noche de muerte",
-"última de noche",
-"última"
-];
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="toolbar mb2 mt2">
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/'"
+      >
+        Home
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/articles'"
+      >
+        Articles
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/poetry/poetry'"
+      >
+        Poetry
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/narrative'"
+      >
+        Narrative
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/works'"
+      >
+        Works
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://0x000042.com/portfolio'"
+      >
+        Portfolio
+      </button>
+      <button
+        class="btn fil-cat"
+        onclick="window.location.href='https://app.0x000042.com/'"
+      >
+        Digital Garden
+      </button>
+    </div>
 
-for(let i=0; i<totalEstrofas; i++){
-  const p = document.createElement('p');
-  p.classList.add('estrofa');
-  const verso = versos[i % versos.length];
-  p.textContent = `${verso}`;
-  main.appendChild(p);
-  estrofas.push(p);
-}
+    <article>
+      <h2>Adoración al Sol</h2>
+      <p>
+        El nacimiento del sol. Un gigantexto oulipiano sobre el nacimiento del sol
+      </p>
+<hr />
+     
+    </article>
 
-  function updateBackground(){
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    let progress = Math.min(scrollTop / docHeight, 1);
+    <!-- Marco con la experiencia -->
+    <div id="experience-wrapper">
+      <iframe id="experience-frame" src="interactive2.html"></iframe>
+      <button id="expand-btn">⛶</button>
+    </div>
 
-    let r, g, b;
-    if(progress < 0.1){
-      let t = progress/0.1;
-      r = Math.round(255*(1-t) + 102*t);
-      g = Math.round(255*(1-t) + 163*t);
-      b = Math.round(255*(1-t) + 255*t);
-    } else if(progress < 0.3){
-      let t = (progress-0.1)/0.2;
-      r = Math.round(102*(1-t) + 255*t);
-      g = Math.round(163*(1-t) + 150*t);
-      b = Math.round(255*(1-t) + 50*t);
-    } else if(progress < 0.5){
-      let t = (progress-0.3)/0.2;
-      r = Math.round(255*(1-t) + 255*t);
-      g = Math.round(150*(1-t) + 150*t);
-      b = Math.round(50*(1-t) + 50*t);
-    } else if(progress < 0.66){
-      let t = (progress-0.5)/0.16;
-      r = Math.round(255*(1-t)*0.6);
-      g = Math.round(150*(1-t)*0.5);
-      b = Math.round(50*(1-t)*0.6 + 128*t);
-    } else {
-      let t = (progress-0.66)/0.34;
-      r = Math.round(0*(1-t));
-      g = Math.round(0*(1-t));
-      b = Math.round(128*(1-t));
-    }
+    <style>
+      #experience-wrapper {
+        position: relative;
+        width: 80%;
+        height: 1000px;
+        /* tamaño inicial */
+        margin: 20px auto;
+        border: 3px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+      }
 
-    document.body.style.background = `rgb(${r},${g},${b})`;
+      #experience-wrapper.fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        z-index: 9999;
+      }
 
-    // Letras: de azul oscuro #000042 a más claras según scroll
-    const startColor = {r:0, g:0, b:66};
-    const endColor = {r:255, g:255, b:255};
-    const currentR = Math.round(startColor.r + (endColor.r - startColor.r)*progress);
-    const currentG = Math.round(startColor.g + (endColor.g - startColor.g)*progress);
-    const currentB = Math.round(startColor.b + (endColor.b - startColor.b)*progress);
-    estrofas.forEach(p => {
-      p.style.color = `rgb(${currentR},${currentG},${currentB})`;
-    });
-  }
+      #experience-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
 
-  window.addEventListener('scroll', updateBackground);
-  window.addEventListener('load', updateBackground);
-</script>
+      #expand-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10000;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+      }
 
+      #expand-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    </style>
 
+    <script>
+      const wrapper = document.getElementById("experience-wrapper");
+      const expandBtn = document.getElementById("expand-btn");
 
+      expandBtn.addEventListener("click", () => {
+        wrapper.classList.toggle("fullscreen");
+        expandBtn.textContent = wrapper.classList.contains("fullscreen")
+          ? "✖"
+          : "⛶";
+      });
+    </script>
 
-  </main>
-</body>
+    <!-- partial -->
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="../gallery.js"></script>
+  </body>
 </html>

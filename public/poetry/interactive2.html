@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitología del nacimiento del sol</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', serif;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    height: 100%;
+    font-weight:bold;
+  }
+  body {
+    background: #ffffff;
+    transition: background 0.1s linear;
+  }
+  .sol {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #ff6600;
+    margin: 2rem auto;
+  }
+  main {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+  }
+  .estrofa {
+    padding: .5rem 0;
+    transition: color 0.1s linear;
+  }
+</style>
+</head>
+<body>
+  <div class="sol"></div>
+  <main>
+    <script>
+      const totalEstrofas = 80;
+const main = document.querySelector('main');
+const estrofas = [];
+
+
+const versos = [
+  "Sol",
+  "génesis del sol",
+"figura de génesis del sol",
+"simpleza de figura del génesis del sol", 
+"vacío de simpleza de figura del génesis",
+"círculo del vacío de simpleza de figura",
+"color de círculo del vacío de simpleza",
+"lleno de color del círculo del vacío",
+"imposibilidad de lleno de color del círculo",
+"realidad de imposibilidad de lleno de color",
+"figuras de realidad de imposibilidad de lleno", 
+"espacio de figuras de realidad de imposibilidad",
+"infinito de espacio de figuras de realidad",
+"vacío de infinito de espacio de figuras", 
+"caos de vacío de infinito de espacio",
+"cuerpos de caos de vacío de infinito",
+"celestes de cuerpos de caos de vacío",
+"sustancia de celestes de cuerpos de caos",
+"unicidad de sustancia de celestes de cuerpos",
+"inmantente de unicidad de sustancia de celestes",
+"seres de inmanente de unicidad de sustancia",
+"luz de seres de inmanente de unicidad", 
+"obscuridad de luz de seres de inmanente",
+"perecer de obscuridad de luz de seres", 
+"conversión de perecer de obscuridad de luz", 
+"continuidad de conversión de perecer de obscuridad", 
+"teleología de continuidad de conversión de perecer",
+"condenado de teleología de continudad de conversión",
+"seres vivos de condenado de teleología de continudad", 
+"células de seres vivos de condenado de teleología",
+"mitósis de células de seres vivos de condenado", 
+"energía de mitósis de células de seres vivos",
+"arcano de energía de mitósis de células",
+"elementos de arcano de energía de mitósis",
+"partículas de elementos de arcano de energía",
+"química de partículas de elementos de arcano",
+"composición de química de partículas de elementos",
+"símbolos de composición de química de partículas",
+"aprehensión de símbolos de composición de química",
+"individuos de aprehensión de símbolos de composición",
+"cognición de individuos de aprehensión de símbolos", 
+"colectivo de cognición de individuos de aprehensión",
+"inconsciente de colectivo de cognición de individuos",
+"formacion de inconsciente de colectivo de cognición",
+"información de formación de inconsciente de colectivo",
+"unidades de información de formación de inconsciente", 
+"bits de unidades de información de formación",
+"tecnología de bits de unidades de información",
+"objetos de tecnología de bits de unidades", 
+"señales de objetos de tecnología de bits",
+"transmisión de señales de objetos de tecnología",
+"neuronas de transmisión de señales de objetos",
+"imagen de neuronas de transmisión de señales",
+"semejanza de imagen de neuronas de transmisión",
+"creación de semejanza de imagen de neuronnas",
+"Dios de creación de semajanza de imagen", 
+"estrellas de Dios de creación de semejanza",
+"centro de estrellas de Dios de creación",
+"esferas de centro de estrellas de Dios",
+"silencio de esfera de centro de estrellas",
+"música de silencio de esferas de centro",
+"gravedad de música de silencio de esferas", 
+"átomos de gravedad de música de silencio",
+"tiempo de átomos de gravedad de música",
+"historia de tiempo de átomos de gravedad", 
+"día de historia de tiempo de átomos",
+"relatos de día de historia de tiempo",
+"diferencia de relatos de día de historia", 
+"cultura de diferencia de relatos de día",
+"mismidad de cultura de diferencia de relatos",
+"adoración de mismidad de cultura de diferencia",
+"nacimiento de adoración de mismidad de cultura",
+"mitología de nacimiento de adoración de mismidad",
+"día de mitología de nacimiento de adoración",
+"muerte de día de mitología de adoración",
+"noche de muerte de día de mitología",
+"última de noche de muerte de día",
+"última de noche de muerte",
+"última de noche",
+"última"
+];
+
+for(let i=0; i<totalEstrofas; i++){
+  const p = document.createElement('p');
+  p.classList.add('estrofa');
+  const verso = versos[i % versos.length];
+  p.textContent = `${verso}`;
+  main.appendChild(p);
+  estrofas.push(p);
+}
+
+  function updateBackground(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    let progress = Math.min(scrollTop / docHeight, 1);
+
+    let r, g, b;
+    if(progress < 0.1){
+      let t = progress/0.1;
+      r = Math.round(255*(1-t) + 102*t);
+      g = Math.round(255*(1-t) + 163*t);
+      b = Math.round(255*(1-t) + 255*t);
+    } else if(progress < 0.3){
+      let t = (progress-0.1)/0.2;
+      r = Math.round(102*(1-t) + 255*t);
+      g = Math.round(163*(1-t) + 150*t);
+      b = Math.round(255*(1-t) + 50*t);
+    } else if(progress < 0.5){
+      let t = (progress-0.3)/0.2;
+      r = Math.round(255*(1-t) + 255*t);
+      g = Math.round(150*(1-t) + 150*t);
+      b = Math.round(50*(1-t) + 50*t);
+    } else if(progress < 0.66){
+      let t = (progress-0.5)/0.16;
+      r = Math.round(255*(1-t)*0.6);
+      g = Math.round(150*(1-t)*0.5);
+      b = Math.round(50*(1-t)*0.6 + 128*t);
+    } else {
+      let t = (progress-0.66)/0.34;
+      r = Math.round(0*(1-t));
+      g = Math.round(0*(1-t));
+      b = Math.round(128*(1-t));
+    }
+
+    document.body.style.background = `rgb(${r},${g},${b})`;
+
+    // Letras: de azul oscuro #000042 a más claras según scroll
+    const startColor = {r:0, g:0, b:66};
+    const endColor = {r:255, g:255, b:255};
+    const currentR = Math.round(startColor.r + (endColor.r - startColor.r)*progress);
+    const currentG = Math.round(startColor.g + (endColor.g - startColor.g)*progress);
+    const currentB = Math.round(startColor.b + (endColor.b - startColor.b)*progress);
+    estrofas.forEach(p => {
+      p.style.color = `rgb(${currentR},${currentG},${currentB})`;
+    });
+  }
+
+  window.addEventListener('scroll', updateBackground);
+  window.addEventListener('load', updateBackground);
+</script>
+
+
+
+
+  </main>
+</body>
+</html>
