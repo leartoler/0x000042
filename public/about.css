@@ -575,3 +575,17 @@ margin-left: 1rem;
 .mb2 {
     margin-bottom: 1rem;
 }
+
+
+.gallery-title {
+  clear: both;
+  margin: 40px 0 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
+
