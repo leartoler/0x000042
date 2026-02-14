@@ -1,0 +1,100 @@
+body {
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  background: #fdf2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.reveal-container {
+  text-align: center;
+}
+
+#reveal-button {
+  background: #d63384;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#reveal-button:hover {
+  background: #e85d9e;
+}
+
+.letter-container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: #d63384;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.content .closing {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #d63384;
+}
+
+.signature {
+  text-align: right;
+  font-size: 1rem;
+  margin-top: 20px;
+  color: #555;
+}
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b81;
+  clip-path: polygon(50% 0%, 61% 12%, 73% 0%, 100% 25%, 50% 100%, 0 25%, 27% 0%, 39% 12%);
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+}
