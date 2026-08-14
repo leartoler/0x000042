@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>— abc / poemas</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:   #ff5eac;
+      --black:  #000000;
+      --white:  #ffffff;
+      --c1: #ff2200;
+      --c2: #0033ff;
+      --c3: #00bb44;
+      --c4: #ff6600;
+      --c5: #9900ff;
+      --c6: #0099cc;
+    }
+
+    body {
+      background: var(--pink);
+      color: var(--black);
+      font-family: Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    /* ── Encabezado ── */
+    header {
+      margin-bottom: 80px;
+      border-bottom: 3px solid var(--black);
+      padding-bottom: 40px;
+    }
+
+    .header-eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+    }
+
+    .header-sub {
+      margin-top: 28px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    /* ── Estado ── */
+    #status {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--black);
+      animation: pulse-dot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.2; transform: scale(0.5); }
+    }
+
+    /* ── Feed ── */
+    #poems-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── Tarjeta ── */
+    .poem-card {
+      padding: 40px 0;
+      border-bottom: 2px solid var(--black);
+      animation: card-in 0.5s ease both;
+    }
+
+    .poem-card:first-child {
+      border-top: 2px solid var(--black);
+    }
+
+    @keyframes card-in {
+      from { opacity: 0; transform: translateX(-12px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .poem-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .poem-number {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .poem-date {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      opacity: 0.5;
+    }
+
+    .poem-text {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Colores rotativos para cada poema */
+    .poem-card:nth-child(6n+1) .poem-text { color: var(--c1); }
+    .poem-card:nth-child(6n+2) .poem-text { color: var(--c2); }
+    .poem-card:nth-child(6n+3) .poem-text { color: var(--c3); }
+    .poem-card:nth-child(6n+4) .poem-text { color: var(--c4); }
+    .poem-card:nth-child(6n+5) .poem-text { color: var(--c5); }
+    .poem-card:nth-child(6n+6) .poem-text { color: var(--c6); }
+
+    /* ── Vacío ── */
+    #empty-state {
+      display: none;
+      padding: 80px 0;
+    }
+
+    #empty-state p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.8;
+      opacity: 0.5;
+    }
+
+    /* ── Conteo ── */
+    #poem-count {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 48px;
+      opacity: 0.5;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-top: 3px solid var(--black);
+      margin-top: 80px;
+    }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 3.5rem; }
+      .poem-card { padding: 28px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-dot { animation: none; }
+      .poem-card { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <p class="header-eyebrow">instalación — abc</p>
+      <h1>Pensar<br/>cosas<br/>en el<br/>tianguis</h1>
+      <p class="header-sub">
+        Registro en vivo de poemas completados en la instalación.
+        Cada uno fue construido por una voz.
+      </p>
+    </header>
+
+    <div id="status">
+      <span class="pulse-dot"></span>
+      <span id="status-text">conectando...</span>
+    </div>
+
+    <div id="poems-feed"></div>
+
+    <div id="empty-state">
+      <p>Aún no hay poemas.<br/>El primero llegará cuando alguien hable.</p>
+    </div>
+
+    <p id="poem-count">
+      <span id="count-num">0</span> poemas hasta ahora
+    </p>
+  </div>
+
+  <footer>— abc &nbsp;/&nbsp; tiempo real</footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      onSnapshot,
+      query,
+      orderBy
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // ─────────────────────────────────────────────
+    // CAMBIA ESTOS VALORES POR LOS DE TU PROYECTO
+    const firebaseConfig = {
+      apiKey: "AIzaSyAPojAEnUdvjV9rpzUsMSXFsRZFELbvtJs",
+  authDomain: "poemawebabc.firebaseapp.com",
+  projectId: "poemawebabc",
+  storageBucket: "poemawebabc.firebasestorage.app",
+  messagingSenderId: "923223974932",
+  appId: "1:923223974932:web:a587504d19fc04fb697301"
+    };
+    // ─────────────────────────────────────────────
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    const feed       = document.getElementById("poems-feed");
+    const statusText = document.getElementById("status-text");
+    const emptyState = document.getElementById("empty-state");
+    const poemCount  = document.getElementById("poem-count");
+    const countNum   = document.getElementById("count-num");
+
+    function formatFecha(fechaStr) {
+      if (!fechaStr) return "";
+      try {
+        const d = new Date(fechaStr.replace(" ", "T"));
+        return d.toLocaleDateString("es-MX", {
+          day: "numeric", month: "long", year: "numeric",
+          hour: "2-digit", minute: "2-digit"
+        });
+      } catch { return fechaStr; }
+    }
+
+    function renderPoem(doc, index, total) {
+      const data  = doc.data();
+      const texto = data.texto || "";
+      const fecha = data.fecha || "";
+      const num   = total - index;
+
+      const card = document.createElement("article");
+      card.className = "poem-card";
+      card.dataset.id = doc.id;
+      card.style.animationDelay = `${index * 50}ms`;
+
+      card.innerHTML = `
+        <div class="poem-meta">
+          <span class="poem-number">${String(num).padStart(2, "0")}</span>
+          <span class="poem-date">${formatFecha(fecha)}</span>
+        </div>
+        <div class="poem-text">${texto}</div>
+      `;
+
+      return card;
+    }
+
+    const q = query(collection(db, "poemas"), orderBy("fecha", "asc"));
+
+    onSnapshot(q, (snapshot) => {
+      statusText.textContent = "en vivo";
+      feed.innerHTML = "";
+      const docs = snapshot.docs;
+
+      if (docs.length === 0) {
+        emptyState.style.display = "block";
+        poemCount.style.display  = "none";
+      } else {
+        emptyState.style.display = "none";
+        poemCount.style.display  = "block";
+        countNum.textContent     = docs.length;
+
+        [...docs].reverse().forEach((doc, i) => {
+          feed.appendChild(renderPoem(doc, i, docs.length));
+        });
+      }
+    }, (error) => {
+      statusText.textContent = "error de conexión";
+      console.error("Firestore error:", error);
+    });
+  </script>
+</body>
+</html>
